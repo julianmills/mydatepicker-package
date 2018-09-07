@@ -341,6 +341,22 @@ var LocaleService = (function () {
                 todayBtnTxt: "Í dag",
                 firstDayOfWeek: "su",
                 sunHighlight: true
+            },
+            "tw": {
+                dayLabels: { su: "週日", mo: "週一", tu: "週二", we: "週三", th: "週四", fr: "週五", sa: "週六" },
+                monthLabels: { 1: "一月", 2: "二月", 3: "三月", 4: "四月", 5: "五月", 6: "六月", 7: "七月", 8: "八月", 9: "九月", 10: "十月", 11: "十一月", 12: "十二月" },
+                dateFormat: "yyyy-mm-dd",
+                todayBtnTxt: "今天",
+                firstDayOfWeek: "mo",
+                sunHighlight: true
+            },
+            "lv": {
+                dayLabels: { su: "S", mo: "P", tu: "O", we: "T", th: "C", fr: "P", sa: "S" },
+                monthLabels: { 1: "Janv", 2: "Febr", 3: "Marts", 4: "Apr", 5: "Maijs", 6: "Jūn", 7: "Jūl", 8: "Aug", 9: "Sept", 10: "Okt", 11: "Nov", 12: "Dec" },
+                dateFormat: "dd.mm.yyyy",
+                todayBtnTxt: "Šodien",
+                firstDayOfWeek: "mo",
+                sunHighlight: true
             }
         };
     }
