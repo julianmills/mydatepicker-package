@@ -1,4 +1,4 @@
-import { EventEmitter, OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef, Renderer, OnDestroy } from "@angular/core";
+import { EventEmitter, OnChanges, SimpleChanges, ElementRef, ChangeDetectorRef, OnDestroy } from "@angular/core";
 import { ControlValueAccessor } from "@angular/forms";
 import { IMyDate, IMyMonth, IMyCalendarMonth, IMyCalendarYear, IMyWeek, IMyOptions, IMyDateModel, IMyInputFieldChanged, IMyCalendarViewChanged, IMyInputFocusBlur } from "./interfaces/index";
 import { LocaleService } from "./services/my-date-picker.locale.service";
@@ -6,11 +6,9 @@ import { UtilService } from "./services/my-date-picker.util.service";
 export declare const MYDP_VALUE_ACCESSOR: any;
 export declare class MyDatePicker implements OnChanges, ControlValueAccessor, OnDestroy {
     elem: ElementRef;
-    private renderer;
     private cdr;
     private localeService;
     private utilService;
-    globalListener: Function;
     options: IMyOptions;
     locale: string;
     defaultMonth: string;
@@ -51,7 +49,7 @@ export declare class MyDatePicker implements OnChanges, ControlValueAccessor, On
     currMonthId: number;
     nextMonthId: number;
     opts: IMyOptions;
-    constructor(elem: ElementRef, renderer: Renderer, cdr: ChangeDetectorRef, localeService: LocaleService, utilService: UtilService);
+    constructor(elem: ElementRef, cdr: ChangeDetectorRef, localeService: LocaleService, utilService: UtilService);
     setLocaleOptions(): void;
     setOptions(): void;
     getSelectorTopPosition(): string;
@@ -76,11 +74,16 @@ export declare class MyDatePicker implements OnChanges, ControlValueAccessor, On
     setDisabledState(disabled: boolean): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
+    ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
     removeBtnClicked(): void;
     onDecreaseBtnClicked(): void;
     onIncreaseBtnClicked(): void;
     openBtnClicked(): void;
+    onClickListener: (evt: MouseEvent) => void;
+    addGlobalListener(): void;
+    removeGlobalListener(): void;
+    onClickDocument(evt: any): void;
     openSelector(reason: number): void;
     closeSelector(reason: number): void;
     setVisibleMonth(): void;
@@ -113,5 +116,4 @@ export declare class MyDatePicker implements OnChanges, ControlValueAccessor, On
     jsDateToMyDate(date: Date): IMyDate;
     parseSelectedMonth(ms: string): IMyMonth;
     setHeaderBtnDisabledState(m: number, y: number): void;
-    ngOnDestroy(): void;
 }

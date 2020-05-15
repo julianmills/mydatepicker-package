@@ -1,14 +1,13 @@
-import { Directive, ElementRef, Renderer, Input } from "@angular/core";
+import { Directive, ElementRef, Input } from "@angular/core";
 export var FocusDirective = (function () {
-    function FocusDirective(el, renderer) {
+    function FocusDirective(el) {
         this.el = el;
-        this.renderer = renderer;
     }
     FocusDirective.prototype.ngAfterViewInit = function () {
         if (this.value === "0") {
             return;
         }
-        this.renderer.invokeElementMethod(this.el.nativeElement, "focus", []);
+        this.el.nativeElement.focus();
     };
     FocusDirective.decorators = [
         { type: Directive, args: [{
@@ -17,7 +16,6 @@ export var FocusDirective = (function () {
     ];
     FocusDirective.ctorParameters = [
         { type: ElementRef, },
-        { type: Renderer, },
     ];
     FocusDirective.propDecorators = {
         'value': [{ type: Input, args: ["mydpfocus",] },],

@@ -352,6 +352,14 @@ export var LocaleService = (function () {
                 todayBtnTxt: "Šodien",
                 firstDayOfWeek: "mo",
                 sunHighlight: true
+            },
+            "et": {
+                dayLabels: { su: "P", mo: "E", tu: "T", we: "K", th: "N", fr: "R", sa: "L" },
+                monthLabels: { 1: "Jaan", 2: "Veebr", 3: "Märts", 4: "Apr", 5: "Mai", 6: "Juuni", 7: "Juuli", 8: "Aug", 9: "Sept", 10: "Okt", 11: "Nov", 12: "Dets" },
+                dateFormat: "dd.mm.yyyy",
+                todayBtnTxt: "Täna",
+                firstDayOfWeek: "mo",
+                sunHighlight: true
             }
         };
     }
