@@ -1,11 +1,11 @@
 {
   "name": "mydatepicker",
-  "version": "2.6.10",
-  "description": "Angular date picker",
+  "version": "9.0.1",
+  "description": "Angular datepicker",
+  "homepage": "https://kekeh.github.io/mydatepicker/",
   "keywords": [
     "Angular",
-    "typescript",
-    "date picker"
+    "datepicker"
   ],
   "author": "kekeh",
   "license": "MIT",
@@ -13,20 +13,21 @@
     "type": "git",
     "url": "https://github.com/kekeh/mydatepicker.git"
   },
-  "scripts": {},
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7"
+  },
   "main": "bundles/mydatepicker.umd.js",
-  "typings": "index.d.ts",
-  "module": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "files": [
-    "index.d.ts",
-    "index.js",
-    "LICENSE",
-    "FONT-LICENSE",
-    "package.json",
-    "README.md",
-    "dist",
-    "bundles"
-  ]
+  "module": "fesm5/mydatepicker.js",
+  "es2015": "fesm2015/mydatepicker.js",
+  "esm5": "esm5/mydatepicker.js",
+  "esm2015": "esm2015/mydatepicker.js",
+  "fesm5": "fesm5/mydatepicker.js",
+  "fesm2015": "fesm2015/mydatepicker.js",
+  "typings": "mydatepicker.d.ts",
+  "metadata": "mydatepicker.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
 }
